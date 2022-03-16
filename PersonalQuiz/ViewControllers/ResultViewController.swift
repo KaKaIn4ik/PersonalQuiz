@@ -20,17 +20,18 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         calculatePersonalityResult()
+        navigationItem.hidesBackButton = true 
     }
-
+    
     private func calculatePersonalityResult() {
         var  frequencyOfAnswerd: [Animal: Int] = [:]
-
-        for asa in responses {
-            frequencyOfAnswerd[asa.animal] = (frequencyOfAnswerd[asa.animal] ?? 0) + 1
+        
+        for response in responses {
+            frequencyOfAnswerd[response.animal] = (frequencyOfAnswerd[response.animal] ?? 0) + 1
         }
-
-
-
+        
+        
+        
         let eeer = frequencyOfAnswerd.sorted ( by: {(pair1, pair2) -> Bool  in
             return pair1.value > pair2.value
         })
