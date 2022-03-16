@@ -32,10 +32,10 @@ class ResultViewController: UIViewController {
         
         
         
-        let eeer = frequencyOfAnswerd.sorted ( by: {(pair1, pair2) -> Bool  in
+        let answersSorted = frequencyOfAnswerd.sorted ( by: {(pair1, pair2) -> Bool  in
             return pair1.value > pair2.value
         })
-        let mostCommonAnswer = eeer.first!.key
+        let mostCommonAnswer = answersSorted.first!.key
         
         resultIconLabel.text = " Вы - \(mostCommonAnswer.rawValue)!"
         resultTextLabel.text = mostCommonAnswer.definition
